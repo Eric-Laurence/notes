@@ -1,0 +1,8 @@
+title: Notes
+email: ""
+description: A basic GitHub Pages blog
+baseurl: ""
+url: ""
+theme: minima
+plugins:
+  - jekyll-feed
