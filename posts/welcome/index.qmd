@@ -1,0 +1,16 @@
+---
+title: "Welcome"
+description: "First post."
+date: "2026-05-07"
+categories: [meta]
+---
+
+This is where I'll be writing notes on math.
+
+Math renders in the usual way — inline like $e^{i\pi} + 1 = 0$, or set apart in display:
+
+$$
+\int_{-\infty}^{\infty} e^{-x^2}\,dx = \sqrt{\pi}.
+$$
+
+See the [theorem demo](../theorem-demo/) for theorem environments and a worked computation.
