@@ -30,7 +30,6 @@ format:
     theme:
       dark: [darkly, theme-darkly.scss]
       light: [cosmo, theme-cosmo.scss]
-    respect-user-color-scheme: true
     css: styles.css
     toc: true
     html-math-method: mathjax
