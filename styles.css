@@ -49,11 +49,11 @@ main.content {
   padding-bottom: 0.6rem;
 }
 
-/* Pre-set body offset to match navbar height. Quarto's nav JS sets this
-   dynamically on load, which causes a downward content shift; matching it
-   in CSS eliminates the flash. */
-body.nav-fixed {
-  padding-top: 56px;
+/* Hide the main content until Quarto's nav JS has set the body's top offset.
+   The JS sets data-bs-offset when it adjusts padding, so keying off that
+   attribute lets the layout settle off-screen instead of flashing into place. */
+body.nav-fixed:not([data-bs-offset]) #quarto-content {
+  visibility: hidden;
 }
 
 /* Display math gets a touch more breathing room */
