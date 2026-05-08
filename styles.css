@@ -55,6 +55,26 @@ body.nav-fixed {
   padding-top: 60px !important;
 }
 
+/* Quarto's search input is injected by JS into an empty div; pre-style the
+   container as a placeholder so the bar doesn't pop in from nothing. */
+#quarto-search {
+  min-width: 220px;
+}
+#quarto-search:empty {
+  display: inline-block;
+  height: 36px;
+  background: rgba(127, 127, 127, 0.08);
+  border: 1px solid rgba(127, 127, 127, 0.18);
+  border-radius: 4px;
+}
+#quarto-search:empty::before {
+  content: "Search";
+  display: block;
+  padding: 0.5rem 0.75rem;
+  color: rgba(127, 127, 127, 0.7);
+  font-size: 0.875rem;
+}
+
 /* Display math gets a touch more breathing room */
 .math.display {
   margin: 1em 0;
