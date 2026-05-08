@@ -1,0 +1,7 @@
+---
+title: "About"
+---
+
+I'm Eric Laurence. This is where I write up math.
+
+Source on [GitHub](https://github.com/Eric-Laurence/notes).

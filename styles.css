@@ -1,0 +1,48 @@
+/* Theorem-style environments. Apply with ::: {.theorem} ... ::: */
+.theorem,
+.proposition,
+.lemma,
+.corollary,
+.definition,
+.example,
+.remark {
+  margin: 1.25em 0;
+  padding: 0.75em 1em;
+  border-left: 3px solid var(--bs-primary);
+  background: rgba(127, 127, 127, 0.06);
+  border-radius: 0 4px 4px 0;
+}
+
+.definition,
+.example,
+.remark {
+  border-left-color: var(--bs-secondary, #6c757d);
+}
+
+.proof {
+  margin: 1.25em 0;
+  padding: 0 0 0 1em;
+  border-left: 1px solid rgba(127, 127, 127, 0.4);
+}
+
+.proof::before {
+  content: "Proof. ";
+  font-style: italic;
+  font-weight: 600;
+}
+
+.proof::after {
+  content: " ∎";
+  font-weight: bold;
+  margin-left: 0.25em;
+}
+
+/* Comfortable measure for math-heavy reading */
+main.content {
+  max-width: 760px;
+}
+
+/* Display math gets a touch more breathing room */
+.math.display {
+  margin: 1em 0;
+}

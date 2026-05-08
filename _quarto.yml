@@ -1,0 +1,40 @@
+project:
+  type: website
+  output-dir: _site
+
+website:
+  title: "Notes"
+  description: "Math notes by Eric Laurence"
+  site-url: https://eric-laurence.github.io/notes
+  repo-url: https://github.com/Eric-Laurence/notes
+  navbar:
+    right:
+      - text: Posts
+        href: index.qmd
+      - text: About
+        href: about.qmd
+      - icon: github
+        href: https://github.com/Eric-Laurence/notes
+        aria-label: GitHub
+      - icon: rss
+        href: index.xml
+        aria-label: RSS
+  search:
+    location: navbar
+    type: textbox
+  page-navigation: true
+  back-to-top-navigation: true
+
+format:
+  html:
+    theme:
+      light: cosmo
+      dark: darkly
+    css: styles.css
+    toc: true
+    html-math-method: mathjax
+    anchor-sections: true
+    code-copy: true
+
+execute:
+  freeze: auto
