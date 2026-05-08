@@ -1,6 +1,10 @@
 project:
   type: website
   output-dir: _site
+  resources:
+    - rss-style.xsl
+  post-render:
+    - scripts/add-rss-stylesheet.py
 
 website:
   title: "Notes"
