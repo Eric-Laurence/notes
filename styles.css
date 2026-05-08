@@ -98,6 +98,25 @@ body.nav-fixed {
   fill: currentColor !important;
 }
 
+/* Replace Quarto's toggle-switch icon with bootstrap-icons sun/moon glyphs.
+   The icon shows the destination, so dark-active shows a sun (click for light)
+   and light-active shows a moon (click for dark). */
+.quarto-color-scheme-toggle .bi::before {
+  background-image: none !important;
+  background: none !important;
+  font-family: "bootstrap-icons" !important;
+  font-size: 1rem;
+  line-height: 1;
+  width: auto !important;
+  height: auto !important;
+}
+.quarto-color-scheme-toggle:not(.alternate) .bi::before {
+  content: "\f5a1" !important;
+}
+.quarto-color-scheme-toggle.alternate .bi::before {
+  content: "\f494" !important;
+}
+
 /* Hide math expressions until KaTeX has replaced the raw LaTeX with its
    rendered output (which contains a .katex element). Eliminates the
    raw-text-to-rendered reflow flash. */
