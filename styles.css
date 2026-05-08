@@ -42,18 +42,17 @@ main.content {
   max-width: 760px;
 }
 
-/* Lock navbar dimensions so toggling themes doesn't shift content vertically */
+/* Lock navbar height and matching body offset so neither Quarto's nav JS nor
+   theme toggles can shift content vertically. !important on the body padding
+   beats the inline style Quarto's JS would otherwise set. */
 .navbar {
-  min-height: 56px;
+  height: 60px !important;
   padding-top: 0.6rem;
   padding-bottom: 0.6rem;
 }
 
-/* Hide the main content until Quarto's nav JS has set the body's top offset.
-   The JS sets data-bs-offset when it adjusts padding, so keying off that
-   attribute lets the layout settle off-screen instead of flashing into place. */
-body.nav-fixed:not([data-bs-offset]) #quarto-content {
-  visibility: hidden;
+body.nav-fixed {
+  padding-top: 60px !important;
 }
 
 /* Display math gets a touch more breathing room */
