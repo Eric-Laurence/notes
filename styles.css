@@ -75,6 +75,13 @@ body.nav-fixed {
   font-size: 0.875rem;
 }
 
+/* Hide math expressions until KaTeX has replaced the raw LaTeX with its
+   rendered output (which contains a .katex element). Eliminates the
+   raw-text-to-rendered reflow flash. */
+.math:not(:has(.katex)) {
+  visibility: hidden;
+}
+
 /* Display math gets a touch more breathing room */
 .math.display {
   margin: 1em 0;
