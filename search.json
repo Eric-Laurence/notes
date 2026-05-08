@@ -1,0 +1,51 @@
+[
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "I’m Eric Laurence. This is where I write up math.\nSource on GitHub.\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "posts/theorem-demo/index.html",
+    "href": "posts/theorem-demo/index.html",
+    "title": "Theorems, proofs, and computation",
+    "section": "",
+    "text": "Inline: the golden ratio \\(\\varphi = \\tfrac{1+\\sqrt{5}}{2}\\) satisfies \\(\\varphi^2 = \\varphi + 1\\).\nDisplay with alignment:\n\\[\n\\begin{aligned}\n\\varphi^2 &= \\varphi + 1, \\\\\n\\varphi^3 &= \\varphi^2 + \\varphi = 2\\varphi + 1.\n\\end{aligned}\n\\]"
+  },
+  {
+    "objectID": "posts/theorem-demo/index.html#math-syntax",
+    "href": "posts/theorem-demo/index.html#math-syntax",
+    "title": "Theorems, proofs, and computation",
+    "section": "",
+    "text": "Inline: the golden ratio \\(\\varphi = \\tfrac{1+\\sqrt{5}}{2}\\) satisfies \\(\\varphi^2 = \\varphi + 1\\).\nDisplay with alignment:\n\\[\n\\begin{aligned}\n\\varphi^2 &= \\varphi + 1, \\\\\n\\varphi^3 &= \\varphi^2 + \\varphi = 2\\varphi + 1.\n\\end{aligned}\n\\]"
+  },
+  {
+    "objectID": "posts/theorem-demo/index.html#theorem-environments",
+    "href": "posts/theorem-demo/index.html#theorem-environments",
+    "title": "Theorems, proofs, and computation",
+    "section": "Theorem environments",
+    "text": "Theorem environments\n\nTheorem (Fundamental theorem of calculus). Let \\(f : [a,b] \\to \\mathbb{R}\\) be continuous. Then for every \\(x \\in (a,b)\\), \\[\n\\frac{d}{dx}\\int_a^x f(t)\\,dt \\;=\\; f(x).\n\\]\n\n\nProof. Fix \\(x \\in (a,b)\\). For \\(h \\neq 0\\) small enough that \\(x+h \\in (a,b)\\), \\[\n\\frac{1}{h}\\int_x^{x+h} f(t)\\,dt \\;-\\; f(x)\n\\;=\\;\n\\frac{1}{h}\\int_x^{x+h} \\bigl(f(t) - f(x)\\bigr)\\,dt.\n\\] The right-hand side is bounded in absolute value by \\(\\sup_{|t-x| \\le |h|} |f(t)-f(x)|\\), which tends to \\(0\\) as \\(h \\to 0\\) by continuity of \\(f\\).\n\n\nDefinition. A function \\(f: \\mathbb{R} \\to \\mathbb{R}\\) is Lipschitz if there exists \\(L \\ge 0\\) such that \\(|f(x) - f(y)| \\le L|x-y|\\) for all \\(x, y\\)."
+  },
+  {
+    "objectID": "posts/theorem-demo/index.html#computation",
+    "href": "posts/theorem-demo/index.html#computation",
+    "title": "Theorems, proofs, and computation",
+    "section": "Computation",
+    "text": "Computation\nWe can run code right inside a post. Here’s \\(\\sin x\\) alongside its degree-5 Taylor approximation:\n\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nx = np.linspace(-np.pi, np.pi, 200)\nfig, ax = plt.subplots(figsize=(6, 3))\nax.plot(x, np.sin(x), label=r\"$\\sin x$\")\nax.plot(x, x - x**3/6 + x**5/120, \"--\", label=\"Taylor (deg 5)\")\nax.legend()\nax.grid(alpha=0.3)\nax.set_xlabel(\"x\")\nplt.show()\n\n\n\n\n\\(\\sin x\\) vs. its degree-5 Taylor polynomial at \\(0\\).\n\n\n\n\nThe approximation is excellent near \\(0\\) and visibly drifts as \\(|x|\\) approaches \\(\\pi\\) — which is the whole point of a local Taylor expansion."
+  },
+  {
+    "objectID": "posts/welcome/index.html",
+    "href": "posts/welcome/index.html",
+    "title": "Welcome",
+    "section": "",
+    "text": "This is where I’ll be writing notes on math.\nMath renders in the usual way — inline like \\(e^{i\\pi} + 1 = 0\\), or set apart in display:\n\\[\n\\int_{-\\infty}^{\\infty} e^{-x^2}\\,dx = \\sqrt{\\pi}.\n\\]\nSee the theorem demo for theorem environments and a worked computation.\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Notes",
+    "section": "",
+    "text": "Welcome\n\n\n\nmeta\n\n\n\nFirst post.\n\n\n\n\n\nMay 7, 2026\n\n\nEric Laurence\n\n\n\n\n\n\n\n\n\n\n\n\nTheorems, proofs, and computation\n\n\n\nmeta\n\nanalysis\n\n\n\nA showcase of the post format: math, theorem environments, and runnable Python.\n\n\n\n\n\nMay 7, 2026\n\n\nEric Laurence\n\n\n\n\n\nNo matching items\n Back to top"
+  }
+]
