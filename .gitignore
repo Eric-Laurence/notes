@@ -6,3 +6,7 @@ __pycache__/
 *.Rproj.user/
 .Rhistory
 .RData
+
+.venv
+
+**/*.quarto_ipynb

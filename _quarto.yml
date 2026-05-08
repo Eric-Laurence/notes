@@ -27,15 +27,16 @@ website:
 
 format:
   html:
+    # Quarto hardcodes the "light" slot as the primary stylesheet regardless
+    # of YAML order, so dark is placed there to make it the actual default.
     theme:
-      dark: [darkly, theme-dark.scss]
-      light: [cosmo, theme-light.scss]
+      light: [darkly, theme-darkly.scss]
+      dark: [cosmo, theme-cosmo.scss]
     css: styles.css
     toc: true
     html-math-method: mathjax
     anchor-sections: true
     code-copy: true
-    include-in-header: init-dark.html
     include-after-body: canary.html
 
 execute:

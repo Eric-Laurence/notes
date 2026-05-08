@@ -1,0 +1,12 @@
+{
+  "hash": "dade4600232692959a1588aee01e0820",
+  "result": {
+    "engine": "jupyter",
+    "markdown": "---\ntitle: \"Theorems, proofs, and computation\"\ndescription: \"A showcase of the post format: math, theorem environments, and runnable Python.\"\ndate: \"2026-05-07\"\ncategories: [meta, analysis]\njupyter: python3\n---\n\n## Math syntax\n\nInline: the golden ratio $\\varphi = \\tfrac{1+\\sqrt{5}}{2}$ satisfies $\\varphi^2 = \\varphi + 1$.\n\nDisplay with alignment:\n\n$$\n\\begin{aligned}\n\\varphi^2 &= \\varphi + 1, \\\\\n\\varphi^3 &= \\varphi^2 + \\varphi = 2\\varphi + 1.\n\\end{aligned}\n$$\n\n## Theorem environments\n\n::: {.theorem}\n**Theorem (Fundamental theorem of calculus).** Let $f : [a,b] \\to \\mathbb{R}$ be continuous. Then for every $x \\in (a,b)$,\n$$\n\\frac{d}{dx}\\int_a^x f(t)\\,dt \\;=\\; f(x).\n$$\n:::\n\n::: {.proof}\nFix $x \\in (a,b)$. For $h \\neq 0$ small enough that $x+h \\in (a,b)$,\n$$\n\\frac{1}{h}\\int_x^{x+h} f(t)\\,dt \\;-\\; f(x)\n\\;=\\;\n\\frac{1}{h}\\int_x^{x+h} \\bigl(f(t) - f(x)\\bigr)\\,dt.\n$$\nThe right-hand side is bounded in absolute value by $\\sup_{|t-x| \\le |h|} |f(t)-f(x)|$, which tends to $0$ as $h \\to 0$ by continuity of $f$.\n:::\n\n::: {.definition}\n**Definition.** A function $f: \\mathbb{R} \\to \\mathbb{R}$ is *Lipschitz* if there exists $L \\ge 0$ such that $|f(x) - f(y)| \\le L|x-y|$ for all $x, y$.\n:::\n\n## Computation\n\nWe can run code right inside a post. Here's $\\sin x$ alongside its degree-5 Taylor approximation:\n\n::: {#a0c2e6af .cell execution_count=1}\n``` {.python .cell-code}\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nx = np.linspace(-np.pi, np.pi, 200)\nfig, ax = plt.subplots(figsize=(6, 3))\nax.plot(x, np.sin(x), label=r\"$\\sin x$\")\nax.plot(x, x - x**3/6 + x**5/120, \"--\", label=\"Taylor (deg 5)\")\nax.legend()\nax.grid(alpha=0.3)\nax.set_xlabel(\"x\")\nplt.show()\n```\n\n::: {.cell-output .cell-output-display}\n![$\\sin x$ vs. its degree-5 Taylor polynomial at $0$.](index_files/figure-html/cell-2-output-1.png){width=507 height=282}\n:::\n:::\n\n\nThe approximation is excellent near $0$ and visibly drifts as $|x|$ approaches $\\pi$ — which is the whole point of a *local* Taylor expansion.\n\n",
+    "supporting": [
+      "index_files"
+    ],
+    "filters": [],
+    "includes": {}
+  }
+}
