@@ -42,6 +42,13 @@ main.content {
   max-width: 760px;
 }
 
+/* Lock navbar dimensions so toggling themes doesn't shift content vertically */
+.navbar {
+  min-height: 56px;
+  padding-top: 0.6rem;
+  padding-bottom: 0.6rem;
+}
+
 /* Display math gets a touch more breathing room */
 .math.display {
   margin: 1em 0;
