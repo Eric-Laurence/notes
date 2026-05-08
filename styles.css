@@ -74,21 +74,28 @@ body.nav-fixed {
   font-size: 0.875rem;
 }
 
-/* Style the JS-injected search bar so it blends into the dark navbar instead
-   of showing as a cream-colored box (which is what the default rules pick
-   up from the dark theme's body color). */
+/* The navbar has data-bs-theme="dark" set unconditionally, so style the search
+   to read against a dark background regardless of which body theme is active. */
 .aa-Form {
   background-color: rgba(127, 127, 127, 0.12) !important;
   border: 1px solid rgba(127, 127, 127, 0.25) !important;
-  color: inherit !important;
+  color: rgba(255, 255, 255, 0.85) !important;
 }
 .aa-Input {
-  color: inherit !important;
+  color: rgba(255, 255, 255, 0.85) !important;
   background: transparent !important;
 }
 .aa-Input::placeholder {
-  color: currentColor;
-  opacity: 0.5;
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+.aa-SubmitIcon,
+.aa-DetachedSearchButtonIcon,
+.aa-LoadingIcon {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+.aa-Form svg,
+.aa-Form svg * {
+  fill: currentColor !important;
 }
 
 /* Hide math expressions until KaTeX has replaced the raw LaTeX with its
