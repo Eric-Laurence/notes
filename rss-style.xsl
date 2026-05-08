@@ -111,9 +111,7 @@
         </div>
 
         <div class="help">
-          <p>This page is an <strong>RSS feed</strong>. It looks like a webpage because the browser is rendering it for you, but it's really structured XML meant for feed reader apps.</p>
-          <p>To follow this site, copy the URL of this page into a feed reader (NetNewsWire, Feedly, Inoreader, Reeder, and others). Your reader will check the feed periodically and show you new posts as they appear.</p>
-          <p>New to RSS? <a href="https://aboutfeeds.com" rel="noopener">aboutfeeds.com</a> has a short primer on what feeds are and how to use them.</p>
+          <p>Paste this URL into a feed reader to subscribe. New to RSS? See <a href="https://aboutfeeds.com" rel="noopener">aboutfeeds.com</a>.</p>
         </div>
 
         <h2>Recent posts</h2>
