@@ -49,6 +49,13 @@ main.content {
   padding-bottom: 0.6rem;
 }
 
+/* Pre-set body offset to match navbar height. Quarto's nav JS sets this
+   dynamically on load, which causes a downward content shift; matching it
+   in CSS eliminates the flash. */
+body.nav-fixed {
+  padding-top: 56px;
+}
+
 /* Display math gets a touch more breathing room */
 .math.display {
   margin: 1em 0;
