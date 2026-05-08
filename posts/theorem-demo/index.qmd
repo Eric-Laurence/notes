@@ -1,0 +1,64 @@
+---
+title: "Theorems, proofs, and computation"
+description: "A showcase of the post format: math, theorem environments, and runnable Python."
+date: "2026-05-07"
+categories: [meta, analysis]
+jupyter: python3
+---
+
+## Math syntax
+
+Inline: the golden ratio $\varphi = \tfrac{1+\sqrt{5}}{2}$ satisfies $\varphi^2 = \varphi + 1$.
+
+Display with alignment:
+
+$$
+\begin{aligned}
+\varphi^2 &= \varphi + 1, \\
+\varphi^3 &= \varphi^2 + \varphi = 2\varphi + 1.
+\end{aligned}
+$$
+
+## Theorem environments
+
+::: {.theorem}
+**Theorem (Fundamental theorem of calculus).** Let $f : [a,b] \to \mathbb{R}$ be continuous. Then for every $x \in (a,b)$,
+$$
+\frac{d}{dx}\int_a^x f(t)\,dt \;=\; f(x).
+$$
+:::
+
+::: {.proof}
+Fix $x \in (a,b)$. For $h \neq 0$ small enough that $x+h \in (a,b)$,
+$$
+\frac{1}{h}\int_x^{x+h} f(t)\,dt \;-\; f(x)
+\;=\;
+\frac{1}{h}\int_x^{x+h} \bigl(f(t) - f(x)\bigr)\,dt.
+$$
+The right-hand side is bounded in absolute value by $\sup_{|t-x| \le |h|} |f(t)-f(x)|$, which tends to $0$ as $h \to 0$ by continuity of $f$.
+:::
+
+::: {.definition}
+**Definition.** A function $f: \mathbb{R} \to \mathbb{R}$ is *Lipschitz* if there exists $L \ge 0$ such that $|f(x) - f(y)| \le L|x-y|$ for all $x, y$.
+:::
+
+## Computation
+
+We can run code right inside a post. Here's $\sin x$ alongside its degree-5 Taylor approximation:
+
+```{python}
+#| fig-cap: "$\\sin x$ vs. its degree-5 Taylor polynomial at $0$."
+import numpy as np
+import matplotlib.pyplot as plt
+
+x = np.linspace(-np.pi, np.pi, 200)
+fig, ax = plt.subplots(figsize=(6, 3))
+ax.plot(x, np.sin(x), label=r"$\sin x$")
+ax.plot(x, x - x**3/6 + x**5/120, "--", label="Taylor (deg 5)")
+ax.legend()
+ax.grid(alpha=0.3)
+ax.set_xlabel("x")
+plt.show()
+```
+
+The approximation is excellent near $0$ and visibly drifts as $|x|$ approaches $\pi$ — which is the whole point of a *local* Taylor expansion.
