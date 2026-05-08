@@ -56,12 +56,11 @@ body.nav-fixed {
 }
 
 /* Quarto's search input is injected by JS into an empty div; pre-style the
-   container as a placeholder so the bar doesn't pop in from nothing. */
-#quarto-search {
-  min-width: 220px;
-}
+   container at the same 180px width as the injected aa-Form so the bar
+   doesn't pop in from nothing and there's no dead space around it. */
 #quarto-search:empty {
   display: inline-block;
+  width: 180px;
   height: 36px;
   background: rgba(127, 127, 127, 0.08);
   border: 1px solid rgba(127, 127, 127, 0.18);
@@ -73,6 +72,23 @@ body.nav-fixed {
   padding: 0.5rem 0.75rem;
   color: rgba(127, 127, 127, 0.7);
   font-size: 0.875rem;
+}
+
+/* Style the JS-injected search bar so it blends into the dark navbar instead
+   of showing as a cream-colored box (which is what the default rules pick
+   up from the dark theme's body color). */
+.aa-Form {
+  background-color: rgba(127, 127, 127, 0.12) !important;
+  border: 1px solid rgba(127, 127, 127, 0.25) !important;
+  color: inherit !important;
+}
+.aa-Input {
+  color: inherit !important;
+  background: transparent !important;
+}
+.aa-Input::placeholder {
+  color: currentColor;
+  opacity: 0.5;
 }
 
 /* Hide math expressions until KaTeX has replaced the raw LaTeX with its
