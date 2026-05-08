@@ -35,6 +35,7 @@ format:
     html-math-method: mathjax
     anchor-sections: true
     code-copy: true
+    include-in-header: init-dark.html
     include-after-body: canary.html
 
 execute:
