@@ -22,13 +22,6 @@ $navbar-light-color: rgba(0, 0, 0, 0.7);
 $navbar-light-hover-color: rgba(0, 0, 0, 0.95);
 
 /*-- scss:rules --*/
-body {
-  background-color: #f4ecd6;
-  background-image:
-    radial-gradient(circle at 1px 1px, rgba(31, 24, 19, 0.04) 1px, transparent 0);
-  background-size: 7px 7px;
-}
-
 .navbar {
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
   box-shadow: none;
