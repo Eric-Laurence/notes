@@ -156,8 +156,8 @@ body.nav-fixed {
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  background: rgba(var(--bs-primary-rgb), 0.18);
-  color: var(--bs-primary);
+  background: rgba(201, 152, 106, 0.18);
+  color: #c9986a;
   display: flex;
   align-items: center;
   justify-content: center;
