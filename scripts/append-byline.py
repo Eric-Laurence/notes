@@ -30,7 +30,13 @@ for html_file in output_dir.rglob("*.html"):
     content = html_file.read_text(encoding="utf-8")
     if "page-byline" in content:
         continue
-    if "</main>" not in content:
+    # Inject before <footer so the byline sits outside #quarto-content's grid
+    # and spans the full body width centered on the page. Fall back to </body>
+    # if no footer is present.
+    if "<footer" in content:
+        new_content = content.replace("<footer", BYLINE + "<footer", 1)
+    elif "</body>" in content:
+        new_content = content.replace("</body>", BYLINE + "</body>", 1)
+    else:
         continue
-    new_content = content.replace("</main>", "</main>" + BYLINE, 1)
     html_file.write_text(new_content, encoding="utf-8")
