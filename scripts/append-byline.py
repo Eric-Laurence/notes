@@ -10,16 +10,18 @@ import os
 from pathlib import Path
 
 NAME = "Eric Laurence"
-URL_LABEL = "eric-laurence.github.io/notes"
-URL = "https://eric-laurence.github.io/notes"
+INITIALS = "EL"
+BIO = "writing up notes on math."
 UUID = "979af0cf-9d1e-4435-bfc4-8cb8a4cf8c7b"
 
 BYLINE = (
-    '<div class="page-byline"><p>'
-    f'{NAME} · '
-    f'<a href="{URL}">{URL_LABEL}</a> · '
-    f'{UUID}'
-    '</p></div>'
+    '<div class="page-byline">'
+    f'<div class="page-byline-avatar">{INITIALS}</div>'
+    '<div class="page-byline-text">'
+    f'Written by <strong>{NAME}</strong>, {BIO}'
+    '</div>'
+    '</div>'
+    f'<div class="page-uuid">{UUID}</div>'
 )
 
 output_dir = Path(os.environ.get("QUARTO_PROJECT_OUTPUT_DIR", "_site"))
