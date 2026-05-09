@@ -5,6 +5,7 @@ project:
     - rss-style.xsl
   post-render:
     - scripts/add-rss-stylesheet.py
+    - scripts/append-byline.py
 
 website:
   title: "Notes"
@@ -39,9 +40,6 @@ format:
     html-math-method: katex
     anchor-sections: true
     code-copy: true
-
-filters:
-  - filters/append-uuid.lua
 
 execute:
   freeze: auto

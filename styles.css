@@ -129,12 +129,20 @@ body.nav-fixed {
   margin: 1em 0;
 }
 
-/* Subtle UUID footer appended to every document body by the Lua filter */
-.page-uuid {
+/* Author byline appended to every rendered page by the post-render script */
+.page-byline {
   margin-top: 4rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(127, 127, 127, 0.15);
   text-align: center;
-  color: rgba(127, 127, 127, 0.4);
-  font-size: 0.75rem;
-  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-  letter-spacing: 0.02em;
+  font-size: 0.85rem;
+  color: rgba(127, 127, 127, 0.65);
+}
+.page-byline a {
+  color: inherit;
+  border-bottom: 1px solid rgba(127, 127, 127, 0.25);
+}
+.page-byline a:hover {
+  color: var(--bs-primary);
+  border-bottom-color: var(--bs-primary);
 }
