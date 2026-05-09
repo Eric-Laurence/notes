@@ -1,0 +1,26 @@
+<script>
+// Extend the byline's right edge so that, with its left edge anchored to
+// the article column, its visual center lands on the viewport's horizontal
+// center. The required extension equals (viewport-right-of-main) minus
+// (viewport-left-of-main); pure CSS can't compute this because main's
+// position depends on Quarto's grid which only resolves at layout time.
+(function () {
+  function update() {
+    var main = document.querySelector("main.content");
+    var byline = document.querySelector(".page-byline");
+    if (!main || !byline) return;
+    var rect = main.getBoundingClientRect();
+    var vw = window.innerWidth;
+    var leftMargin = rect.left;
+    var rightMargin = vw - rect.right;
+    var extension = rightMargin - leftMargin;
+    byline.style.marginRight = extension > 0 ? -extension + "px" : "";
+  }
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", update);
+  } else {
+    update();
+  }
+  window.addEventListener("resize", update);
+})();
+</script>

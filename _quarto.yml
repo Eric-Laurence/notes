@@ -42,6 +42,8 @@ format:
     html-math-method: katex
     anchor-sections: true
     code-copy: true
+    include-after-body:
+      - extend-byline.html
 
 execute:
   freeze: auto
