@@ -28,7 +28,7 @@ website:
     location: navbar
     type: textbox
   page-navigation: true
-  back-to-top-navigation: true
+  back-to-top-navigation: false
   page-footer:
     center: "© 2026 Eric Laurence. All rights reserved."
 
