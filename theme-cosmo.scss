@@ -27,7 +27,7 @@ body.quarto-light {
   .quarto-title h1,
   .quarto-listing .listing-title,
   .quarto-post .listing-title {
-    color: $primary;
+    color: darken($primary, 8%);
   }
 }
 
