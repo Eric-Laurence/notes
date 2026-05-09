@@ -22,11 +22,13 @@ $navbar-light-color: rgba(0, 0, 0, 0.7);
 $navbar-light-hover-color: rgba(0, 0, 0, 0.95);
 
 /*-- scss:rules --*/
-h1.title,
-.quarto-title h1,
-.quarto-listing .listing-title,
-.quarto-post .listing-title {
-  color: $primary;
+body.quarto-light {
+  h1.title,
+  .quarto-title h1,
+  .quarto-listing .listing-title,
+  .quarto-post .listing-title {
+    color: $primary;
+  }
 }
 
 .navbar {
