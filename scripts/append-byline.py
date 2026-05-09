@@ -28,7 +28,7 @@ output_dir = Path(os.environ.get("QUARTO_PROJECT_OUTPUT_DIR", "_site"))
 
 for html_file in output_dir.rglob("*.html"):
     content = html_file.read_text(encoding="utf-8")
-    if "page-byline" in content:
+    if '<div class="page-byline"' in content:
         continue
     # Inject inside <main> so the byline width matches the article column and
     # the bars align with the text edges. No grid-induced gap at the bottom.
