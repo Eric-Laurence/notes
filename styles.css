@@ -173,9 +173,16 @@ body.nav-fixed {
 }
 .page-uuid {
   margin-top: 0.75rem;
+  margin-bottom: 0;
   text-align: center;
   font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
   font-size: 0.7rem;
   color: rgba(127, 127, 127, 0.4);
   letter-spacing: 0.02em;
+}
+
+/* Stop the article column from stretching to grid height when the sidebar
+   is taller than the content; eliminates the empty space below the byline. */
+main.content {
+  align-self: start;
 }
