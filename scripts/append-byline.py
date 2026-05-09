@@ -32,5 +32,5 @@ for html_file in output_dir.rglob("*.html"):
         continue
     if "</main>" not in content:
         continue
-    new_content = content.replace("</main>", BYLINE + "</main>", 1)
+    new_content = content.replace("</main>", "</main>" + BYLINE, 1)
     html_file.write_text(new_content, encoding="utf-8")
