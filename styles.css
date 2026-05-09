@@ -128,3 +128,13 @@ body.nav-fixed {
 .math.display {
   margin: 1em 0;
 }
+
+/* Subtle UUID footer appended to every document body by the Lua filter */
+.page-uuid {
+  margin-top: 4rem;
+  text-align: center;
+  color: rgba(127, 127, 127, 0.4);
+  font-size: 0.75rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  letter-spacing: 0.02em;
+}

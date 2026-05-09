@@ -28,8 +28,6 @@ website:
     type: textbox
   page-navigation: true
   back-to-top-navigation: true
-  page-footer:
-    center: "979af0cf-9d1e-4435-bfc4-8cb8a4cf8c7b"
 
 format:
   html:
@@ -41,6 +39,9 @@ format:
     html-math-method: katex
     anchor-sections: true
     code-copy: true
+
+filters:
+  - filters/append-uuid.lua
 
 execute:
   freeze: auto
