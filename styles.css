@@ -131,12 +131,13 @@ body.nav-fixed {
 
 /* Castel-style author byline appended to every rendered page */
 .page-byline {
-  margin-top: 4rem;
-  padding: 1.25rem 0;
+  margin: 4rem auto 0;
+  padding: 1.25rem 1.5rem;
   border-top: 1px solid rgba(127, 127, 127, 0.2);
   border-bottom: 1px solid rgba(127, 127, 127, 0.2);
+  width: fit-content;
+  max-width: 100%;
   display: flex;
-  justify-content: center;
   align-items: center;
   gap: 1rem;
   font-size: 0.95rem;
