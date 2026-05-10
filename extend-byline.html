@@ -14,7 +14,7 @@
     var rightMargin = vw - rect.right;
     var extension = rightMargin - leftMargin;
     var value = extension > 0 ? -extension + "px" : "";
-    document.querySelectorAll(".page-byline, .page-uuid").forEach(function (el) {
+    document.querySelectorAll(".page-byline, .page-links, .page-uuid").forEach(function (el) {
       el.style.marginRight = value;
     });
   }

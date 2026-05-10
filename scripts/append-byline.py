@@ -15,11 +15,16 @@ BIO = "writing up notes on math."
 UUID = "979af0cf-9d1e-4435-bfc4-8cb8a4cf8c7b"
 
 LINKS = [
-    ("GitHub", "https://github.com/Eric-Laurence"),
-    # Add more here: Mastodon, ORCID, email, etc.
+    ("bi-github", "https://github.com/Eric-Laurence", "GitHub"),
+    # Add more like ("bi-mastodon", "https://...", "Mastodon"),
+    # ("bi-envelope-fill", "mailto:...", "Email"), etc.
 ]
 
-links_html = " · ".join(f'<a href="{url}">{label}</a>' for label, url in LINKS)
+links_html = "".join(
+    f'<a href="{url}" aria-label="{label}" title="{label}">'
+    f'<i class="bi {icon}"></i></a>'
+    for icon, url, label in LINKS
+)
 
 BYLINE = (
     '<div class="page-byline">'

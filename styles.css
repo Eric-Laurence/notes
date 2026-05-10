@@ -184,21 +184,29 @@ body.nav-fixed {
   font-weight: 600;
 }
 
-/* Connect links below the byline */
+/* Circular icon CTAs below the byline */
 .page-links {
   margin-top: 1rem;
   text-align: center;
-  font-size: 0.9rem;
-  color: rgba(127, 127, 127, 0.85);
 }
 .page-links a {
-  margin: 0 0.5rem;
-  color: inherit;
-  border-bottom: 1px solid rgba(127, 127, 127, 0.3);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  margin: 0 0.25rem;
+  color: rgba(127, 127, 127, 0.85);
+  background: rgba(127, 127, 127, 0.1);
+  text-decoration: none;
+  border-bottom: none;
+  font-size: 1.05rem;
+  transition: background-color 0.15s ease, color 0.15s ease;
 }
 .page-links a:hover {
+  background: rgba(var(--bs-primary-rgb), 0.18);
   color: var(--bs-primary);
-  border-bottom-color: var(--bs-primary);
 }
 /* Visually hidden but kept in the rendered text so scrapers still extract
    the UUID. Standard sr-only pattern. */
