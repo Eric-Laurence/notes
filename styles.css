@@ -7,10 +7,13 @@ body.quarto-light {
   background-size: 400px 400px;
 }
 
-/* Match the html background to the active body theme so the macOS overscroll
-   bounce reveals the right color rather than browser-default white. */
+/* Carry the body's background (color and noise texture in light mode) onto
+   the html element so the macOS overscroll bounce still shows the paper
+   grain rather than just a flat color. */
 html:has(body.quarto-light) {
   background-color: #f4ecd6;
+  background-image: url("paper-noise.svg");
+  background-size: 400px 400px;
 }
 html:has(body.quarto-dark) {
   background-color: #1a1816;
