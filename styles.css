@@ -171,14 +171,18 @@ body.nav-fixed {
   color: var(--bs-body-color);
   font-weight: 600;
 }
+/* Visually hidden but kept in the rendered text so scrapers still extract
+   the UUID. Standard sr-only pattern. */
 .page-uuid {
-  margin-top: 0.75rem;
-  margin-bottom: 0;
-  text-align: center;
-  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-  font-size: 0.7rem;
-  color: rgba(127, 127, 127, 0.4);
-  letter-spacing: 0.02em;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 /* Stop the article column from stretching to grid height when the sidebar
