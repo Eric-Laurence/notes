@@ -7,10 +7,13 @@ body.quarto-light {
   background-size: 400px 400px;
 }
 
-/* Prevent the macOS overscroll bounce from revealing browser-default bg
-   above and below the page. */
-html, body {
-  overscroll-behavior: none;
+/* Match the html background to the active body theme so the macOS overscroll
+   bounce reveals the right color rather than browser-default white. */
+html:has(body.quarto-light) {
+  background-color: #f4ecd6;
+}
+html:has(body.quarto-dark) {
+  background-color: #1a1816;
 }
 
 /* Let the body's noise texture show through the footer in light mode */
