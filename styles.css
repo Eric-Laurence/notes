@@ -15,6 +15,12 @@ html.quarto-light #paper-noise {
   display: block;
 }
 
+/* Let the noise overlay show through the body in light mode. The visible
+   page color comes from html.quarto-light's bg-color below. */
+body.quarto-light {
+  background-color: transparent;
+}
+
 /* Match the html background color to the active body theme so the
    overscroll bounce shows the right color behind the fixed noise overlay. */
 html.quarto-light {
