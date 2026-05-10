@@ -3,7 +3,7 @@
    SVG url() and chokes on the URL-encoded "#" inside the filter ref. */
 body.quarto-light {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch' seed='5'/%3E%3CfeColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.04 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  background-size: 400px 400px;
+  background-size: 600px 600px;
 }
 
 /* Theorem-style environments. Apply with ::: {.theorem} ... ::: */
@@ -170,6 +170,23 @@ body.nav-fixed {
 .page-byline-text strong {
   color: var(--bs-body-color);
   font-weight: 600;
+}
+
+/* Connect links below the byline */
+.page-links {
+  margin-top: 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: rgba(127, 127, 127, 0.85);
+}
+.page-links a {
+  margin: 0 0.5rem;
+  color: inherit;
+  border-bottom: 1px solid rgba(127, 127, 127, 0.3);
+}
+.page-links a:hover {
+  color: var(--bs-primary);
+  border-bottom-color: var(--bs-primary);
 }
 /* Visually hidden but kept in the rendered text so scrapers still extract
    the UUID. Standard sr-only pattern. */

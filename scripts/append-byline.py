@@ -14,6 +14,13 @@ INITIALS = "EL"
 BIO = "writing up notes on math."
 UUID = "979af0cf-9d1e-4435-bfc4-8cb8a4cf8c7b"
 
+LINKS = [
+    ("GitHub", "https://github.com/Eric-Laurence"),
+    # Add more here: Mastodon, ORCID, email, etc.
+]
+
+links_html = " · ".join(f'<a href="{url}">{label}</a>' for label, url in LINKS)
+
 BYLINE = (
     '<div class="page-byline">'
     f'<div class="page-byline-avatar">{INITIALS}</div>'
@@ -21,6 +28,7 @@ BYLINE = (
     f'Written by <strong>{NAME}</strong>, {BIO}'
     '</div>'
     '</div>'
+    f'<div class="page-links">{links_html}</div>'
     f'<div class="page-uuid">{UUID}</div>'
 )
 
