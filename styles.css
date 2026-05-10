@@ -6,6 +6,12 @@ body.quarto-light {
   background-size: 400px 400px;
 }
 
+/* Prevent the macOS overscroll bounce from revealing browser-default bg
+   above and below the page. */
+html, body {
+  overscroll-behavior: none;
+}
+
 /* Let the body's noise texture show through the footer in light mode */
 body.quarto-light .footer,
 body.quarto-light .nav-footer {
