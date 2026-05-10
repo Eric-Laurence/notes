@@ -1,20 +1,24 @@
-/* Subtle paper-grain texture on the beige light theme background.
-   SVG lives in a sibling file rather than an inline data URL because
-   Quarto's CSS reference fixup parses url() recursively and corrupts the
-   project's resource resolution when it sees the nested url(#n) inside. */
-body.quarto-light {
-  background-image: url("paper-noise.svg");
-  background-size: 400px 400px;
+/* Inline noise overlay (in paper-noise-overlay.html). Fixed to the viewport,
+   sits behind all content, and shows only in light mode. Includes the
+   overscroll bounce area since it's an actual element rather than a canvas
+   paint. */
+#paper-noise {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  pointer-events: none;
+  display: none;
+}
+html.quarto-light #paper-noise {
+  display: block;
 }
 
-/* Carry the body's background (color and noise texture in light mode) onto
-   the html element so the macOS overscroll bounce still shows the paper
-   grain rather than just a flat color. The theme class is mirrored from
-   body to html by a small script in extend-byline.html. */
+/* Match the html background color to the active body theme so the
+   overscroll bounce shows the right color behind the fixed noise overlay. */
 html.quarto-light {
   background-color: #f4ecd6;
-  background-image: url("paper-noise.svg");
-  background-size: 400px 400px;
 }
 html.quarto-dark {
   background-color: #1a1816;

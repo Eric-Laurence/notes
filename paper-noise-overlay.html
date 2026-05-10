@@ -1,0 +1,11 @@
+<!-- Fixed-position noise overlay. Browsers that won't paint html's
+     background-image in the overscroll bounce still paint a real fixed
+     element, so this gives the texture reliable coverage including the
+     rubber-band area. Styled to show only when html.quarto-light is set. -->
+<svg id="paper-noise" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" aria-hidden="true">
+  <filter id="paper-noise-filter">
+    <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" stitchTiles="stitch" seed="5"/>
+    <feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.04 0"/>
+  </filter>
+  <rect width="100%" height="100%" filter="url(#paper-noise-filter)"/>
+</svg>

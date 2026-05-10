@@ -43,6 +43,8 @@ format:
     html-math-method: katex
     anchor-sections: true
     code-copy: true
+    include-before-body:
+      - paper-noise-overlay.html
     include-after-body:
       - extend-byline.html
 
