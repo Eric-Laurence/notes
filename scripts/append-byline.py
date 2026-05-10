@@ -26,12 +26,12 @@ BYLINE = (
 
 output_dir = Path(os.environ.get("QUARTO_PROJECT_OUTPUT_DIR", "_site"))
 
-for html_file in output_dir.rglob("*.html"):
+# Only target actual posts (posts/<slug>/index.html), not the listing or
+# top-level pages like about.html.
+for html_file in output_dir.glob("posts/*/index.html"):
     content = html_file.read_text(encoding="utf-8")
     if '<div class="page-byline"' in content:
         continue
-    # Inject inside <main> so the byline width matches the article column and
-    # the bars align with the text edges. No grid-induced gap at the bottom.
     if "</main>" not in content:
         continue
     new_content = content.replace("</main>", BYLINE + "</main>", 1)
