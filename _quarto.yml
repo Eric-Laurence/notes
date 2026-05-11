@@ -43,6 +43,9 @@ format:
     html-math-method: katex
     anchor-sections: true
     code-copy: true
+    highlight-style:
+      light: solarized
+      dark: atom-one
     include-before-body:
       - paper-noise-overlay.html
     include-after-body:

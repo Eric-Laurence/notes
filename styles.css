@@ -283,3 +283,20 @@ body.nav-fixed {
 main.content {
   align-self: start;
 }
+
+/* Quarto's sticky-footer min-height pushes the footer to the bottom of the
+   viewport even when content is short, creating large empty bands. Disable
+   it so the footer sits right below the content. */
+body, #quarto-content {
+  min-height: 0 !important;
+}
+
+/* Light mode code blocks: parchment. Warm tone that ties to the paper bg
+   while still reading as a distinct surface. */
+body.quarto-light div.sourceCode,
+body.quarto-light pre,
+body.quarto-light pre.sourceCode {
+  background-color: #e6dab8;
+  border: 1px solid rgba(139, 90, 30, 0.2);
+  border-radius: 4px;
+}
