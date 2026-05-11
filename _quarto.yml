@@ -48,6 +48,7 @@ format:
     include-before-body:
       - paper-noise-overlay.html
     include-after-body:
+      - sync-theme-class.html
       - extend-byline.html
 
 execute:
