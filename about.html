@@ -39,14 +39,12 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-d0ae9245876894da5ac7e18953ecc5cc.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-30a8881a7b8de13a9a67069009209546.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-43b2d995d73a1754bd3a6f5d899fe64b.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-3ab3c25880d787e734ee9f73ca06a7d1.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-1c5d05e776d8cc6ed79b334dc06cf84a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-3ab3c25880d787e734ee9f73ca06a7d1.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-586286fffaa7a6b14c9593e18bb2a005.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-de57e7f8060650a7740b757e15b68a70.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -78,7 +76,7 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+<body class="nav-fixed quarto-dark"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
       const bodyEl = window.document.querySelector("body");
@@ -220,10 +218,8 @@ ul.task-list li input[type="checkbox"] {
         changeGiscusTheme();
       }
     };
-    const authorPrefersDark = false;
+    const authorPrefersDark = true;
     const darkModeDefault = authorPrefersDark;
-      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
-      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
     let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
     // Dark / light mode switch
     window.quartoToggleColorScheme = () => {
@@ -293,6 +289,17 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
+<!-- Fixed-position noise overlay. Browsers that won't paint html's
+     background-image in the overscroll bounce still paint a real fixed
+     element, so this gives the texture reliable coverage including the
+     rubber-band area. Styled to show only when html.quarto-light is set. -->
+<svg id="paper-noise" xmlns="http://www.w3.org/2000/svg" preserveaspectratio="none" aria-hidden="true">
+  <filter id="paper-noise-filter">
+    <feturbulence type="fractalNoise" basefrequency="0.5" numoctaves="2" stitchtiles="stitch" seed="5"></feturbulence>
+    <fecolormatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.04 0"></fecolormatrix>
+  </filter>
+  <rect width="100%" height="100%" filter="url(#paper-noise-filter)"></rect>
+</svg>
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -318,7 +325,56 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+</main> <!-- /main -->
+<script>
+// Mirror the theme class from <body> onto <html> so CSS rules that need to
+// affect the canvas (e.g. background visible in the overscroll bounce) can
+// target html.quarto-light / html.quarto-dark directly without :has(),
+// which some browsers don't apply to canvas painting.
+(function () {
+  function sync() {
+    var b = document.body.classList;
+    var h = document.documentElement.classList;
+    h.toggle("quarto-light", b.contains("quarto-light"));
+    h.toggle("quarto-dark", b.contains("quarto-dark"));
+  }
+  if (document.body) sync();
+  else document.addEventListener("DOMContentLoaded", sync);
+  new MutationObserver(sync).observe(document.documentElement, {
+    subtree: true,
+    attributes: true,
+    attributeFilter: ["class"],
+  });
+})();
+</script>
+<script>
+// Extend the byline's right edge so that, with its left edge anchored to
+// the article column, its visual center lands on the viewport's horizontal
+// center. The required extension equals (viewport-right-of-main) minus
+// (viewport-left-of-main); pure CSS can't compute this because main's
+// position depends on Quarto's grid which only resolves at layout time.
+(function () {
+  function update() {
+    var main = document.querySelector("main.content");
+    if (!main) return;
+    var rect = main.getBoundingClientRect();
+    var vw = window.innerWidth;
+    var leftMargin = rect.left;
+    var rightMargin = vw - rect.right;
+    var extension = rightMargin - leftMargin;
+    var value = extension > 0 ? -extension + "px" : "";
+    document.querySelectorAll(".page-byline, .page-nav, .page-uuid").forEach(function (el) {
+      el.style.marginRight = value;
+    });
+  }
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", update);
+  } else {
+    update();
+  }
+  window.addEventListener("resize", update);
+})();
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
@@ -733,6 +789,19 @@ ul.task-list li input[type="checkbox"] {
   });
   </script>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>© 2026 Eric Laurence. All rights reserved.</p>
+</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
 
 
 
