@@ -1,0 +1,26 @@
+reviews:
+  profile: "assertive"
+
+  high_level_summary: true
+  high_level_summary_in_walkthrough: true
+  high_level_summary_placeholder: ""
+
+  auto_title_placeholder: ""
+
+  suggested_reviewers: false
+
+  pre_merge_checks:
+    docstrings:
+      mode: "off"
+
+  finishing_touches:
+    docstrings:
+      enabled: false
+
+  auto_review:
+    enabled: true
+    drafts: true
+    auto_incremental_review: true
+    auto_pause_after_reviewed_commits: 0
+    base_branches:
+      - ".*"
