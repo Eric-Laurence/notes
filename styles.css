@@ -36,19 +36,31 @@ body.quarto-light .nav-footer {
   background: transparent;
 }
 
-/* Theorem-style environments. Apply with ::: {.theorem} ... ::: */
+/* Theorem-style environments. Apply with ::: {.theorem} ... :::
+   div.sourceCode is included here so code blocks render with identical
+   border, padding, and background treatment as math callouts. */
 .theorem,
 .proposition,
 .lemma,
 .corollary,
 .definition,
 .example,
-.remark {
+.remark,
+div.sourceCode {
   margin: 1.25em 0;
   padding: 0.75em 1em;
   border-left: 3px solid var(--bs-primary);
   background: rgba(127, 127, 127, 0.06);
   border-radius: 0 4px 4px 0;
+}
+
+/* Reset the inner <pre> so Quarto's defaults don't double up on padding/bg. */
+div.sourceCode pre,
+div.sourceCode pre.sourceCode {
+  background: transparent;
+  border: none;
+  margin: 0;
+  padding: 0;
 }
 
 .definition,
@@ -291,12 +303,3 @@ body, #quarto-content {
   min-height: 0 !important;
 }
 
-/* Light mode code blocks: parchment. Warm tone that ties to the paper bg
-   while still reading as a distinct surface. */
-body.quarto-light div.sourceCode,
-body.quarto-light pre,
-body.quarto-light pre.sourceCode {
-  background-color: #e6dab8;
-  border: 1px solid rgba(139, 90, 30, 0.2);
-  border-radius: 4px;
-}
