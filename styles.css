@@ -1,3 +1,36 @@
+/* --- Layout & page chrome --- */
+
+/* Comfortable measure for math-heavy reading; align-self stops the article
+   column from stretching to grid height when the sidebar is taller than the
+   content, which would otherwise leave empty space below the byline. */
+main.content {
+  max-width: 760px;
+  align-self: start;
+}
+
+/* Lock navbar height and matching body offset so neither Quarto's nav JS nor
+   theme toggles can shift content vertically. !important on the body padding
+   beats the inline style Quarto's JS would otherwise set. */
+.navbar {
+  height: 60px !important;
+  padding-top: 0.6rem;
+  padding-bottom: 0.6rem;
+}
+
+body.nav-fixed {
+  padding-top: 60px !important;
+}
+
+/* Quarto's sticky-footer min-height pushes the footer to the bottom of the
+   viewport even when content is short, creating large empty bands. Disable
+   it so the footer sits right below the content. */
+body, #quarto-content {
+  min-height: 0 !important;
+}
+
+
+/* --- Light / dark backgrounds & overscroll --- */
+
 /* Inline noise overlay (in paper-noise-overlay.html). Fixed to the viewport,
    sits behind all content, and shows only in light mode. Includes the
    overscroll bounce area since it's an actual element rather than a canvas
@@ -36,74 +69,8 @@ body.quarto-light .nav-footer {
   background: transparent;
 }
 
-/* Theorem-style environments. Apply with ::: {.theorem} ... :::
-   div.sourceCode is included here so code blocks render with identical
-   border, padding, and background treatment as math callouts. */
-.theorem,
-.proposition,
-.lemma,
-.corollary,
-.definition,
-.example,
-.remark,
-div.sourceCode {
-  margin: 1.25em 0;
-  padding: 0.75em 1em;
-  border-left: 3px solid var(--bs-primary);
-  background: rgba(127, 127, 127, 0.06);
-  border-radius: 0 4px 4px 0;
-}
 
-/* Reset the inner <pre> so Quarto's defaults don't double up on padding/bg. */
-div.sourceCode pre,
-div.sourceCode pre.sourceCode {
-  background: transparent;
-  border: none;
-  margin: 0;
-  padding: 0;
-}
-
-.definition,
-.example,
-.remark {
-  border-left-color: var(--bs-secondary, #6c757d);
-}
-
-.proof {
-  margin: 1.25em 0;
-  padding: 0 0 0 1em;
-  border-left: 1px solid rgba(127, 127, 127, 0.4);
-}
-
-.proof::before {
-  content: "Proof. ";
-  font-style: italic;
-  font-weight: 600;
-}
-
-.proof::after {
-  content: " ∎";
-  font-weight: bold;
-  margin-left: 0.25em;
-}
-
-/* Comfortable measure for math-heavy reading */
-main.content {
-  max-width: 760px;
-}
-
-/* Lock navbar height and matching body offset so neither Quarto's nav JS nor
-   theme toggles can shift content vertically. !important on the body padding
-   beats the inline style Quarto's JS would otherwise set. */
-.navbar {
-  height: 60px !important;
-  padding-top: 0.6rem;
-  padding-bottom: 0.6rem;
-}
-
-body.nav-fixed {
-  padding-top: 60px !important;
-}
+/* --- Quarto component fixups --- */
 
 /* Quarto's search input is injected by JS into an empty div; pre-style the
    container at the same 180px width as the injected aa-Form so the bar
@@ -167,6 +134,9 @@ body.nav-fixed {
   content: "\f494" !important;
 }
 
+
+/* --- Math rendering --- */
+
 /* Hide math expressions until KaTeX has replaced the raw LaTeX with its
    rendered output (which contains a .katex element). Eliminates the
    raw-text-to-rendered reflow flash. */
@@ -178,6 +148,63 @@ body.nav-fixed {
 .math.display {
   margin: 1em 0;
 }
+
+
+/* --- Theorem environments & code blocks --- */
+
+/* Theorem-style environments. Apply with ::: {.theorem} ... :::
+   div.sourceCode is included here so code blocks render with identical
+   border, padding, and background treatment as math callouts. */
+.theorem,
+.proposition,
+.lemma,
+.corollary,
+.definition,
+.example,
+.remark,
+div.sourceCode {
+  margin: 1.25em 0;
+  padding: 0.75em 1em;
+  border-left: 3px solid var(--bs-primary);
+  background: rgba(127, 127, 127, 0.06);
+  border-radius: 0 4px 4px 0;
+}
+
+/* Reset the inner <pre> so Quarto's defaults don't double up on padding/bg. */
+div.sourceCode pre,
+div.sourceCode pre.sourceCode {
+  background: transparent;
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+.definition,
+.example,
+.remark {
+  border-left-color: var(--bs-secondary, #6c757d);
+}
+
+.proof {
+  margin: 1.25em 0;
+  padding: 0 0 0 1em;
+  border-left: 1px solid rgba(127, 127, 127, 0.4);
+}
+
+.proof::before {
+  content: "Proof. ";
+  font-style: italic;
+  font-weight: 600;
+}
+
+.proof::after {
+  content: " ∎";
+  font-weight: bold;
+  margin-left: 0.25em;
+}
+
+
+/* --- Page footer components --- */
 
 /* Author byline appended to every rendered post */
 .page-byline {
@@ -276,6 +303,7 @@ body.nav-fixed {
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+
 /* Visually hidden but kept in the rendered text so scrapers still extract
    the UUID. Standard sr-only pattern. */
 .page-uuid {
@@ -289,17 +317,3 @@ body.nav-fixed {
   white-space: nowrap;
   border: 0;
 }
-
-/* Stop the article column from stretching to grid height when the sidebar
-   is taller than the content; eliminates the empty space below the byline. */
-main.content {
-  align-self: start;
-}
-
-/* Quarto's sticky-footer min-height pushes the footer to the bottom of the
-   viewport even when content is short, creating large empty bands. Disable
-   it so the footer sits right below the content. */
-body, #quarto-content {
-  min-height: 0 !important;
-}
-
