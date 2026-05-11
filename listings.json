@@ -1,6 +1,9 @@
 [
   {
     "listing": "/index.html",
-    "items": []
+    "items": [
+      "/posts/welcome/index.html",
+      "/posts/theorem-demo/index.html"
+    ]
   }
 ]

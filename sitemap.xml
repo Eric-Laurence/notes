@@ -2,10 +2,18 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://eric-laurence.github.io/notes/index.html</loc>
-    <lastmod>2026-05-11T21:46:07.645Z</lastmod>
+    <lastmod>2026-05-11T21:45:57.757Z</lastmod>
+  </url>
+  <url>
+    <loc>https://eric-laurence.github.io/notes/posts/theorem-demo/index.html</loc>
+    <lastmod>2026-05-11T21:45:57.757Z</lastmod>
+  </url>
+  <url>
+    <loc>https://eric-laurence.github.io/notes/posts/welcome/index.html</loc>
+    <lastmod>2026-05-11T21:45:57.757Z</lastmod>
   </url>
   <url>
     <loc>https://eric-laurence.github.io/notes/about.html</loc>
-    <lastmod>2026-05-11T21:46:07.645Z</lastmod>
+    <lastmod>2026-05-11T21:45:57.757Z</lastmod>
   </url>
 </urlset>
