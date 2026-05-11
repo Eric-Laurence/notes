@@ -1,0 +1,50 @@
+<script>
+// Mirror the theme class from <body> onto <html> so CSS rules that need to
+// affect the canvas (e.g. background visible in the overscroll bounce) can
+// target html.quarto-light / html.quarto-dark directly without :has(),
+// which some browsers don't apply to canvas painting.
+(function () {
+  function sync() {
+    var b = document.body.classList;
+    var h = document.documentElement.classList;
+    h.toggle("quarto-light", b.contains("quarto-light"));
+    h.toggle("quarto-dark", b.contains("quarto-dark"));
+  }
+  if (document.body) sync();
+  else document.addEventListener("DOMContentLoaded", sync);
+  new MutationObserver(sync).observe(document.documentElement, {
+    subtree: true,
+    attributes: true,
+    attributeFilter: ["class"],
+  });
+})();
+</script>
+
+<script>
+// Extend the byline's right edge so that, with its left edge anchored to
+// the article column, its visual center lands on the viewport's horizontal
+// center. The required extension equals (viewport-right-of-main) minus
+// (viewport-left-of-main); pure CSS can't compute this because main's
+// position depends on Quarto's grid which only resolves at layout time.
+(function () {
+  function update() {
+    var main = document.querySelector("main.content");
+    if (!main) return;
+    var rect = main.getBoundingClientRect();
+    var vw = window.innerWidth;
+    var leftMargin = rect.left;
+    var rightMargin = vw - rect.right;
+    var extension = rightMargin - leftMargin;
+    var value = extension > 0 ? -extension + "px" : "";
+    document.querySelectorAll(".page-byline, .page-nav, .page-uuid").forEach(function (el) {
+      el.style.marginRight = value;
+    });
+  }
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", update);
+  } else {
+    update();
+  }
+  window.addEventListener("resize", update);
+})();
+</script>

@@ -1,6 +1,11 @@
 project:
   type: website
   output-dir: _site
+  resources:
+    - rss-style.xsl
+  post-render:
+    - scripts/add-rss-stylesheet.py
+    - scripts/append-byline.py
 
 website:
   title: "Notes"
@@ -23,18 +28,27 @@ website:
     location: navbar
     type: textbox
   page-navigation: true
-  back-to-top-navigation: true
+  back-to-top-navigation: false
+  page-footer:
+    center: "© 2026 Eric Laurence. All rights reserved."
 
 format:
   html:
     theme:
-      light: cosmo
-      dark: darkly
+      dark: [darkly, theme-darkly.scss]
+      light: [cosmo, theme-cosmo.scss]
     css: styles.css
     toc: true
-    html-math-method: mathjax
+    html-math-method: katex
     anchor-sections: true
     code-copy: true
+    highlight-style:
+      light: solarized
+      dark: atom-one
+    include-before-body:
+      - paper-noise-overlay.html
+    include-after-body:
+      - extend-byline.html
 
 execute:
   freeze: auto

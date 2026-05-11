@@ -6,3 +6,13 @@ __pycache__/
 *.Rproj.user/
 .Rhistory
 .RData
+
+.venv
+
+**/*.quarto_ipynb
+
+# Scaffold posts kept in the working tree as dev sandboxes, never published.
+posts/theorem-demo/
+posts/welcome/
+_freeze/posts/theorem-demo/
+_freeze/posts/welcome/
