@@ -3,7 +3,6 @@ project:
   output-dir: _site
   resources:
     - rss-style.xsl
-    - paper-noise.svg
   post-render:
     - scripts/add-rss-stylesheet.py
     - scripts/append-byline.py
