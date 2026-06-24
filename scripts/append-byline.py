@@ -12,7 +12,7 @@ from pathlib import Path
 
 NAME = "Eric Laurence"
 INITIALS = "EL"
-BIO = "writing up notes on math."
+BIO = "writing about whatever catches my interest."
 UUID = "979af0cf-9d1e-4435-bfc4-8cb8a4cf8c7b"
 
 LINKS = [
