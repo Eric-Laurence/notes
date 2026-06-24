@@ -2,6 +2,10 @@
 title: "About"
 ---
 
-I'm Eric Laurence. This is where I write up math.
+Hey! I'm Eric Laurence. I've found myself frequently having ideas I want to share, but not really having time or a means to share them. Well, that first problem comes and goes, and this blog is intended to address the second.
+
+I'm broadly curious about all sorts of topics, and my interests range from math and physics to philosophy and psychology. And, of course, machine learning, which was personally one of my first throughlines connecting these other topics. More recently, I've been fascinated more and more with the history, philosophy, and practice of mathematics. What *is* mathematics? Also, how is it learned, and why is the way we teach it full of so many problems, from the earliest introduction in elementary school all the way up through undergraduate classes (and likely further, but I'm not yet in a place to comment on that)? What is the understanding of mathematics, anyway? For that matter, what *is* understanding, and how is it transmitted?
+
+I hope that gives you a small introduction to my mind. My intention is to always make every post here as interesting as possible, while conveying some kind of original thought. If that interests you, check back from time to time, and maybe consider bookmarking the page.
 
 Source on [GitHub](https://github.com/Eric-Laurence/notes).
