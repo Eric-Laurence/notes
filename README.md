@@ -1,6 +1,6 @@
 # Notes
 
-Math notes by Eric Laurence. Live site: <https://eric-laurence.github.io/notes>.
+Eric Laurence's blog. Live site: <https://eric-laurence.github.io/notes>.
 
 Built with [Quarto](https://quarto.org), deployed to GitHub Pages.
 

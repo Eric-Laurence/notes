@@ -9,7 +9,7 @@ project:
 
 website:
   title: "Notes"
-  description: "Math notes by Eric Laurence"
+  description: "Eric Laurence's blog"
   site-url: https://eric-laurence.github.io/notes
   repo-url: https://github.com/Eric-Laurence/notes
   navbar:
